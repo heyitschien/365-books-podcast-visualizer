@@ -25,7 +25,7 @@ export function VisualizerHero() {
       <div className="relative z-10 flex h-full flex-col px-6 pb-12 pt-10 sm:px-12 lg:px-20">
 
         <div className="mt-12 grid w-full flex-1 grid-cols-1 gap-10 lg:mt-16 lg:grid-cols-[1.05fr_0.85fr] lg:gap-12 xl:mx-auto xl:max-w-6xl">
-          <div className="flex flex-col justify-center gap-6">
+          <div className="flex flex-col justify-center gap-6 xl:-ml-16">
             <div className="flex items-center gap-6 font-mono text-xs uppercase tracking-[0.65em]">
               <span className="text-primary/80">365 Books</span>
               <span className="text-foreground/50">Podcast</span>
@@ -41,27 +41,36 @@ export function VisualizerHero() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-6 font-mono text-[0.75rem] uppercase tracking-[0.5em] text-foreground/70">
-              <div>
-                <p className="text-xl tracking-[0.35em] text-white">{episode.episodeNumber}</p>
+            <div className="inline-flex items-center gap-4 self-start rounded-2xl border border-white/10 bg-white/5 px-5 py-4 font-mono uppercase tracking-[0.35em] text-foreground/70 backdrop-blur">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 2.5L11 7L3 11.5V2.5Z" fill="currentColor" />
+                </svg>
+              </span>
+              <div className="flex flex-col gap-1">
+                <span className="text-[0.7rem] tracking-[0.5em] text-foreground/60">Now Playing</span>
+                <span className="text-base tracking-[0.4em] text-white">Episode 04</span>
               </div>
             </div>
 
-            <div className="inline-flex flex-col self-start rounded-2xl border border-white/10 bg-white/5 px-5 py-4 font-mono text-xs uppercase tracking-[0.3em] text-foreground/70 backdrop-blur">
-              <p className="text-white/80">KEY IDEAS</p>
-              <div className="mt-3 flex flex-wrap gap-3 text-[0.65rem] normal-case tracking-[0.2em]">
+            <div className="mt-6 space-y-3">
+              <p className="font-mono text-xs uppercase tracking-[0.4em] text-foreground/60">
+                Key Ideas
+              </p>
+              <ul className="space-y-2 text-base text-foreground/80">
                 {episode.takeaways.map((item) => (
-                  <span key={item} className="rounded-full border border-white/20 px-3 py-1 text-foreground/80">
+                  <li key={item} className="list-inside list-disc text-white/80">
                     {item}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
 
           <div className="relative flex items-center justify-center lg:justify-end">
             <div className="relative w-[260px] sm:w-[340px] lg:w-[380px]">
-              <div className="absolute inset-0 rounded-[2.25rem] bg-primary/20 blur-[110px]" aria-hidden />
+              <div className="absolute inset-0 rounded-[2.25rem] bg-primary/20 blur-[140px]" aria-hidden />
+              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle,_rgba(214,168,90,0.22)_0%,_rgba(0,0,0,0)_70%)] blur-[120px]" aria-hidden />
               <div className="relative border border-white/10 bg-black/20 p-4 shadow-[0_35px_120px_rgba(0,0,0,0.85)]">
                 <Image
                   src={episode.coverSrc}
@@ -75,6 +84,10 @@ export function VisualizerHero() {
             </div>
           </div>
         </div>
+
+        <p className="pointer-events-none absolute inset-x-0 top-1/3 text-center text-[min(22vw,400px)] font-sentient uppercase leading-none text-white/5 blur-sm">
+          Podcast
+        </p>
 
       </div>
     </section>
