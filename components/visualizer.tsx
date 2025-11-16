@@ -6,12 +6,16 @@ import { useAudioAnalyser } from "@/hooks/use-audio-analyser";
 import { Waveform } from "./waveform";
 
 const episode = {
-  episodeNumber: "Episode 04",
-  bookTitle: "Atomic Habits",
-  author: "James Clear",
-  hook: "Tiny changes. Remarkable results. Practical systems that compound.",
-  takeaways: ["Habit architecture", "1% daily gains", "Identity-first goals"],
-  coverSrc: "/visualizer/atomic-habits.jpg",
+  episodeNumber: "Episode 03",
+  bookTitle: "Deep Work",
+  author: "Cal Newport",
+  hook: "Train intense focus to ship elite results in a distracted world.",
+  takeaways: [
+    "Attention rituals",
+    "Monastic time blocks",
+    "Measure high-impact depth",
+  ],
+  coverSrc: "/visualizer/deep-work.jpg",
 };
 
 export function VisualizerHero() {
@@ -81,7 +85,8 @@ export function VisualizerHero() {
                 <span className="text-[0.7rem] tracking-[0.5em] text-foreground/60">
                   {ready || isPlaying ? (isPlaying ? "Pause" : "Play") : "Loading"}
                 </span>
-                <span className="text-base tracking-[0.4em] text-white">Episode 04</span>
+                <span className="text-base tracking-[0.4em] text-white">Episode 03
+                </span>
               </div>
             </button>
 
