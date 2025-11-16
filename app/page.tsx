@@ -1,12 +1,12 @@
 'use client'
 
-import { Hero } from "@/components/hero";
+import { VisualizerHero } from "@/components/visualizer";
 import { Leva } from "leva";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <VisualizerHero />
       <Leva hidden />
     </>
   );
