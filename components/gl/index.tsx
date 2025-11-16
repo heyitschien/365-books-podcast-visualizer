@@ -5,7 +5,13 @@ import { useControls } from "leva";
 import { Particles } from "./particles";
 import { VignetteShader } from "./shaders/vignetteShader";
 
-export const GL = ({ hovering }: { hovering: boolean }) => {
+export const GL = ({
+  hovering,
+  energy = 0,
+}: {
+  hovering: boolean;
+  energy?: number;
+}) => {
   const {
     speed,
     focus,
@@ -69,6 +75,7 @@ export const GL = ({ hovering }: { hovering: boolean }) => {
           useManualTime={useManualTime}
           manualTime={manualTime}
           introspect={hovering}
+          audioEnergy={energy}
         />
         <Effects multisamping={0} disableGamma>
           <shaderPass
